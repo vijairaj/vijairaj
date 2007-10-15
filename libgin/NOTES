@@ -1,0 +1,6 @@
+RSA_METHOD_FLAG_NO_CHECK
+RSA_FLAG_EXT_PKEY
+RSA_FLAG_SIGN_VER
+
+ENGINE_set_default unnecessary static linkage, use specific functions
+
