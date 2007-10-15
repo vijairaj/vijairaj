@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# $Id$
+
+cmd=$1
+shift
+
+LD_LIBRARY_PATH=`pwd` openssl ${cmd} -engine gin $*
