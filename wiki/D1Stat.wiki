@@ -1,0 +1,10 @@
+#labels python,dataone,meter
+#Dataone bandwidth usage viewer
+
+= Introduction =
+
+This is a python script to view your [http://dataone.in/ Dataone] broadband usage.
+
+= Requirements =
+  * Python >= 2.4
+  * Dataone broadband connection
