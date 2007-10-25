@@ -8,3 +8,6 @@ This is a python script to view your [http://dataone.in/ Dataone] broadband usag
 = Requirements =
   * Python >= 2.4
   * Dataone broadband connection
+
+= Download =
+[http://vijairaj.googlecode.com/svn/trunk/ Latest version]
