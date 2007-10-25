@@ -4,7 +4,7 @@
 
 """ DataOne bandwidth usage viewer
 
-http://www.vijairaj.5gigs.com/project/d1stat
+http://vijairaj.googlecode.com/
 
 Retrieve the service records from the accounting site and parse the table to
 calculate the bandwidth usage. Some plans have free usage period from 0200 -
@@ -15,14 +15,14 @@ free and paid usage hours, because we assume that data downloaded during this
 period is evenly distributed, which might not be true.
 
 DISCLAIMER:
-    STANDARD DISCLAIMER APPLIES. THIS SOFTWARE WAS MADE FOR THE AUTHORS
+    STANDARD DISCLAIMER APPLIES. THIS SOFTWARE WAS MADE FOR THE AUTHOR'S
     PERSONAL USE AND IS RELEASED TO THE PUBLIC ONLY BECAUSE IT MIGHT BE USEFUL
     TO THE PUBLIC AS WELL. FEEL FREE TO USE AND DISTRIBUTE BUT AT YOUR OWN
     RISK.
 """
 
 __author__ = "Vijairaj R (vijairaj.r@gmail.com)"
-__version__ = "$Revision: 3 $"[11:-2]
+__version__ = "$Revision$"[11:-2]
 __copyright__ = "Copyright (c) 2005 Vijairaj R"
 
 
@@ -37,7 +37,7 @@ from sgmllib import SGMLParser
 
 # -------------------------------------------------------------------- #
 
-CFG_DATE = "2006-02"    # "yyyy-mm"
+CFG_DATE = "2007-10"    # "yyyy-mm"
 
 CFG_USER_NAME = "username"
 CFG_PASSWD    = "password"
@@ -251,8 +251,10 @@ def main():
     freekb = paidkb = bsnl_paidkb = 0
     freekb_tot = paidkb_tot = 0
 
+    """
     print "Start time\t\t", "End time\t\t", "Total (KB)\t", \
           "Free (KB)\t", "Paid (KB)\t", "Paid (KB) - BSNL"
+    """
 
     while table:
         row = table.pop()
@@ -261,9 +263,11 @@ def main():
         freekb = int(int(row[id_totkb]) * row[id_frees] / int(row[id_tots]))
         paidkb = int(int(row[id_totkb]) * row[id_paids] / int(row[id_tots]))
 
+        """
         print row[id_startt], "\t", row[id_endt], "\t", \
               row[id_totkb], "\t\t", freekb, "\t\t", paidkb, \
               "\t\t", row[id_bsnl_paidkb]
+        """
 
         freekb_tot += freekb
         paidkb_tot += paidkb
